@@ -265,6 +265,22 @@ library_for_all_configs("libdart") {
   ]
 }
 
+static_library("libdart_unified") {
+  complete_static_lib = true
+  deps = [
+    ":libdart_jit",
+    "bin:dart_io_api"
+  ]
+}
+
+static_library("libdart_snapshot") {
+  complete_static_lib = true
+  deps = [
+    "bin:dart_snapshot_cc",
+    "bin:dart_kernel_platform_cc",
+  ]
+}
+
 action("generate_version_cc_file") {
   inputs = [
     "../tools/utils.py",

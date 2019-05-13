@@ -639,7 +639,7 @@ bin_to_linkable("platform_strong_dill_linkable") {
 }
 
 source_set("dart_snapshot_cc") {
-  visibility = [ ":*" ]
+  visibility = [ ":*","../*" ]
   deps = [
     ":isolate_snapshot_data_linkable",
     ":isolate_snapshot_instructions_linkable",
@@ -653,7 +653,7 @@ source_set("dart_snapshot_cc") {
 }
 
 source_set("dart_kernel_platform_cc") {
-  visibility = [ ":*" ]
+  visibility = [ ":*", "../*" ]
   deps = [
     ":gen_kernel_bytecode_dill",
     ":kernel_service_dill_linkable",
